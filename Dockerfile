@@ -39,7 +39,8 @@ RUN apt-get -y update &&\
 	python3-tk  \
 	python3-numpy  \
 	unzip  \
-	wget
+	wget &&\
+	rm -rf /var/lib/apt/lists/*
 	
 RUN cd /tmp && \
 	wget https://github.com/opencv/opencv/archive/3.2.0.zip && \
@@ -54,4 +55,4 @@ RUN cd /tmp && \
 	make install && \
 	ldconfig
 
-ADD t /app
+RUN rm -rf /tmp
