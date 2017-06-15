@@ -40,7 +40,8 @@ RUN apt-get -y update &&\
 	python3-numpy  \
 	unzip  \
 	wget &&\
-	rm -rf /var/lib/apt/lists/*
+	apt-get autoremove &&\
+        apt-get clean
 	
 RUN cd /tmp && \
 	wget https://github.com/opencv/opencv/archive/3.2.0.zip && \
